@@ -1,0 +1,16 @@
+{
+  "" : {
+    "dependencies" : "/Users/haoyangkuek/Library/Mobile Documents/com~apple~CloudDocs/Private Document/Development/KClick/DerivedData/KClick/Index.noindex/Build/Intermediates.noindex/KClick.build/Debug/KClickUITests.build/Objects-normal/arm64/KClickUITests-primary.d",
+    "diagnostics" : "/Users/haoyangkuek/Library/Mobile Documents/com~apple~CloudDocs/Private Document/Development/KClick/DerivedData/KClick/Index.noindex/Build/Intermediates.noindex/KClick.build/Debug/KClickUITests.build/Objects-normal/arm64/KClickUITests-primary.dia",
+    "emit-module-dependencies" : "/Users/haoyangkuek/Library/Mobile Documents/com~apple~CloudDocs/Private Document/Development/KClick/DerivedData/KClick/Index.noindex/Build/Intermediates.noindex/KClick.build/Debug/KClickUITests.build/Objects-normal/arm64/KClickUITests-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/haoyangkuek/Library/Mobile Documents/com~apple~CloudDocs/Private Document/Development/KClick/DerivedData/KClick/Index.noindex/Build/Intermediates.noindex/KClick.build/Debug/KClickUITests.build/Objects-normal/arm64/KClickUITests-primary-emit-module.dia",
+    "pch" : "/Users/haoyangkuek/Library/Mobile Documents/com~apple~CloudDocs/Private Document/Development/KClick/DerivedData/KClick/Index.noindex/Build/Intermediates.noindex/KClick.build/Debug/KClickUITests.build/Objects-normal/arm64/KClickUITests-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/haoyangkuek/Library/Mobile Documents/com~apple~CloudDocs/Private Document/Development/KClick/DerivedData/KClick/Index.noindex/Build/Intermediates.noindex/KClick.build/Debug/KClickUITests.build/Objects-normal/arm64/KClickUITests-primary.swiftdeps"
+  },
+  "/Users/haoyangkuek/Library/Mobile Documents/com~apple~CloudDocs/Private Document/Development/KClick/KClickUITests/KClickUITests.swift" : {
+
+  },
+  "/Users/haoyangkuek/Library/Mobile Documents/com~apple~CloudDocs/Private Document/Development/KClick/KClickUITests/KClickUITestsLaunchTests.swift" : {
+
+  }
+}

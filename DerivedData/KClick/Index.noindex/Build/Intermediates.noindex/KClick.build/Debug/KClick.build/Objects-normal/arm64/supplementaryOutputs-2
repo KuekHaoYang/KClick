@@ -1,0 +1,10 @@
+{
+  "/Users/haoyangkuek/Library/Mobile Documents/com~apple~CloudDocs/Private Document/Development/KClick/KClick/ContentView.swift" : {
+    "abi-baseline-json" : "/Users/haoyangkuek/Library/Mobile Documents/com~apple~CloudDocs/Private Document/Development/KClick/DerivedData/KClick/Index.noindex/Build/Intermediates.noindex/KClick.build/Debug/KClick.build/Objects-normal/arm64/KClick.abi.json",
+    "dependencies" : "/Users/haoyangkuek/Library/Mobile Documents/com~apple~CloudDocs/Private Document/Development/KClick/DerivedData/KClick/Index.noindex/Build/Intermediates.noindex/KClick.build/Debug/KClick.build/Objects-normal/arm64/KClick-primary.d",
+    "diagnostics" : "/Users/haoyangkuek/Library/Mobile Documents/com~apple~CloudDocs/Private Document/Development/KClick/DerivedData/KClick/Index.noindex/Build/Intermediates.noindex/KClick.build/Debug/KClick.build/Objects-normal/arm64/KClick-primary.dia",
+    "objc-header" : "/Users/haoyangkuek/Library/Mobile Documents/com~apple~CloudDocs/Private Document/Development/KClick/DerivedData/KClick/Index.noindex/Build/Intermediates.noindex/KClick.build/Debug/KClick.build/Objects-normal/arm64/KClick-Swift.h",
+    "swiftdoc" : "/Users/haoyangkuek/Library/Mobile Documents/com~apple~CloudDocs/Private Document/Development/KClick/DerivedData/KClick/Index.noindex/Build/Intermediates.noindex/KClick.build/Debug/KClick.build/Objects-normal/arm64/KClick.swiftdoc",
+    "swiftsourceinfo" : "/Users/haoyangkuek/Library/Mobile Documents/com~apple~CloudDocs/Private Document/Development/KClick/DerivedData/KClick/Index.noindex/Build/Intermediates.noindex/KClick.build/Debug/KClick.build/Objects-normal/arm64/KClick.swiftsourceinfo"
+  }
+}

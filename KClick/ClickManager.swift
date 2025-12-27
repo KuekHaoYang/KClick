@@ -51,6 +51,9 @@ final class ClickManager: ObservableObject {
         stopTimer()
         guard isClicking && !isPausedByFn else { return }
         
+        // Fire the first click immediately
+        simulateClick()
+        
         let interval = 1.0 / max(1.0, clicksPerSecond)
         timer = Timer.scheduledTimer(withTimeInterval: interval, repeats: true) { [weak self] _ in
             self?.simulateClick()

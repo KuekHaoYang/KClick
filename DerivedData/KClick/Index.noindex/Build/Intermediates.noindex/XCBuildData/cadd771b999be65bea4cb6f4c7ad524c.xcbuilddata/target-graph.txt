@@ -1,0 +1,6 @@
+Target dependency graph (3 targets)
+Target 'KClickUITests' in project 'KClick'
+➜ Explicit dependency on target 'KClick' in project 'KClick'
+Target 'KClickTests' in project 'KClick'
+➜ Explicit dependency on target 'KClick' in project 'KClick'
+Target 'KClick' in project 'KClick' (no dependencies)

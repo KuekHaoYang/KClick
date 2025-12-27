@@ -1,0 +1,54 @@
+{
+  "buildCommand" : {
+    "command" : "prepareForIndexing",
+    "enableIndexBuildArena" : true,
+    "targets" : null
+  },
+  "configuredTargets" : [
+    {
+      "guid" : "2c647402bcf4e45d5fe9ae5436268b370f0be73a43042c79ba367584e97c61b3"
+    },
+    {
+      "guid" : "2c647402bcf4e45d5fe9ae5436268b37e4902a3d768721e87a5116e7609e33e6"
+    },
+    {
+      "guid" : "2c647402bcf4e45d5fe9ae5436268b370d8abb71e2bd5191c0c46016ff2d98e9"
+    }
+  ],
+  "containerPath" : "/Users/haoyangkuek/Library/Mobile Documents/com~apple~CloudDocs/Private Document/Development/KClick/KClick.xcodeproj",
+  "continueBuildingAfterErrors" : true,
+  "dependencyScope" : "workspace",
+  "enableIndexBuildArena" : false,
+  "hideShellScriptEnvironment" : false,
+  "parameters" : {
+    "action" : "indexbuild",
+    "arenaInfo" : {
+      "buildIntermediatesPath" : "/Users/haoyangkuek/Library/Mobile Documents/com~apple~CloudDocs/Private Document/Development/KClick/DerivedData/KClick/Index.noindex/Build/Intermediates.noindex",
+      "buildProductsPath" : "/Users/haoyangkuek/Library/Mobile Documents/com~apple~CloudDocs/Private Document/Development/KClick/DerivedData/KClick/Index.noindex/Build/Products",
+      "derivedDataPath" : "/Users/haoyangkuek/Library/Mobile Documents/com~apple~CloudDocs/Private Document/Development/KClick/DerivedData",
+      "indexDataStoreFolderPath" : "/Users/haoyangkuek/Library/Mobile Documents/com~apple~CloudDocs/Private Document/Development/KClick/DerivedData/KClick/Index.noindex/DataStore",
+      "indexEnableDataStore" : true,
+      "indexPCHPath" : "/Users/haoyangkuek/Library/Mobile Documents/com~apple~CloudDocs/Private Document/Development/KClick/DerivedData/KClick/Index.noindex/PrecompiledHeaders",
+      "indexRegularBuildIntermediatesPath" : "/Users/haoyangkuek/Library/Mobile Documents/com~apple~CloudDocs/Private Document/Development/KClick/DerivedData/KClick/Build/Intermediates.noindex",
+      "indexRegularBuildProductsPath" : "/Users/haoyangkuek/Library/Mobile Documents/com~apple~CloudDocs/Private Document/Development/KClick/DerivedData/KClick/Build/Products",
+      "pchPath" : "/Users/haoyangkuek/Library/Mobile Documents/com~apple~CloudDocs/Private Document/Development/KClick/DerivedData/KClick/Index.noindex/Build/Intermediates.noindex/PrecompiledHeaders"
+    },
+    "configurationName" : "Debug",
+    "overrides" : {
+      "synthesized" : {
+        "table" : {
+          "ENABLE_PREVIEWS" : "NO",
+          "ENABLE_XOJIT_PREVIEWS" : "NO",
+          "ONLY_ACTIVE_ARCH" : "YES"
+        }
+      }
+    }
+  },
+  "qos" : "utility",
+  "schemeCommand" : "launch",
+  "showNonLoggedProgress" : true,
+  "useDryRun" : false,
+  "useImplicitDependencies" : true,
+  "useLegacyBuildLocations" : false,
+  "useParallelTargets" : true
+}

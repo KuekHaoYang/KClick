@@ -1,0 +1,25 @@
+{
+  "" : {
+    "dependencies" : "/Users/haoyangkuek/Library/Mobile Documents/com~apple~CloudDocs/Private Document/Development/KClick/DerivedData/KClick/Index.noindex/Build/Intermediates.noindex/KClick.build/Debug/KClick.build/Objects-normal/arm64/KClick-primary.d",
+    "diagnostics" : "/Users/haoyangkuek/Library/Mobile Documents/com~apple~CloudDocs/Private Document/Development/KClick/DerivedData/KClick/Index.noindex/Build/Intermediates.noindex/KClick.build/Debug/KClick.build/Objects-normal/arm64/KClick-primary.dia",
+    "emit-module-dependencies" : "/Users/haoyangkuek/Library/Mobile Documents/com~apple~CloudDocs/Private Document/Development/KClick/DerivedData/KClick/Index.noindex/Build/Intermediates.noindex/KClick.build/Debug/KClick.build/Objects-normal/arm64/KClick-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/haoyangkuek/Library/Mobile Documents/com~apple~CloudDocs/Private Document/Development/KClick/DerivedData/KClick/Index.noindex/Build/Intermediates.noindex/KClick.build/Debug/KClick.build/Objects-normal/arm64/KClick-primary-emit-module.dia",
+    "pch" : "/Users/haoyangkuek/Library/Mobile Documents/com~apple~CloudDocs/Private Document/Development/KClick/DerivedData/KClick/Index.noindex/Build/Intermediates.noindex/KClick.build/Debug/KClick.build/Objects-normal/arm64/KClick-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/haoyangkuek/Library/Mobile Documents/com~apple~CloudDocs/Private Document/Development/KClick/DerivedData/KClick/Index.noindex/Build/Intermediates.noindex/KClick.build/Debug/KClick.build/Objects-normal/arm64/KClick-primary.swiftdeps"
+  },
+  "/Users/haoyangkuek/Library/Mobile Documents/com~apple~CloudDocs/Private Document/Development/KClick/DerivedData/KClick/Index.noindex/Build/Intermediates.noindex/KClick.build/Debug/KClick.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+
+  },
+  "/Users/haoyangkuek/Library/Mobile Documents/com~apple~CloudDocs/Private Document/Development/KClick/KClick/ClickManager.swift" : {
+
+  },
+  "/Users/haoyangkuek/Library/Mobile Documents/com~apple~CloudDocs/Private Document/Development/KClick/KClick/ContentView.swift" : {
+
+  },
+  "/Users/haoyangkuek/Library/Mobile Documents/com~apple~CloudDocs/Private Document/Development/KClick/KClick/KClickApp.swift" : {
+
+  },
+  "/Users/haoyangkuek/Library/Mobile Documents/com~apple~CloudDocs/Private Document/Development/KClick/KClick/ShortcutManager.swift" : {
+
+  }
+}
