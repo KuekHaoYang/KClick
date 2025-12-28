@@ -10,7 +10,7 @@ struct Shortcut: Codable, Equatable {
     
     var kind: Kind
     var keyCode: UInt16 // key code for keyboard, button number for mouse
-    var modifiers: NSEvent.ModifierFlags.RawValue
+    var modifiers: Int // Store as Int for more robust UserDefaults behavior
     
     var descriptor: String {
         if kind == .mouse {
@@ -18,7 +18,7 @@ struct Shortcut: Codable, Equatable {
         }
         
         var str = ""
-        let flags = NSEvent.ModifierFlags(rawValue: modifiers)
+        let flags = NSEvent.ModifierFlags(rawValue: NSEvent.ModifierFlags.RawValue(modifiers))
         if flags.contains(.command) { str += "⌘" }
         if flags.contains(.option) { str += "⌥" }
         if flags.contains(.control) { str += "⌃" }
@@ -74,6 +74,10 @@ final class ShortcutManager: ObservableObject {
     
     private var globalMonitors: [Any] = []
     private var localMonitors: [Any] = []
+    
+    private let defaults = UserDefaults(suiteName: "com.kclick.settings") ?? .standard
+    private let shortcutKey = "shortcut"
+    private var isLoading = false
     
     var onTriggerStarted: (() -> Void)?
     var onTriggerEnded: (() -> Void)?
@@ -141,7 +145,9 @@ final class ShortcutManager: ObservableObject {
     
     private func handleEvent(_ event: NSEvent) {
         if event.type == .flagsChanged {
-            isFnPressed = event.modifierFlags.contains(.function)
+            DispatchQueue.main.async { [weak self] in
+                self?.isFnPressed = event.modifierFlags.contains(.function)
+            }
             return
         }
         
@@ -154,8 +160,8 @@ final class ShortcutManager: ObservableObject {
         if shortcut.kind == .keyboard {
             isDown = event.type == .keyDown
             isUp = event.type == .keyUp
-            let modifiers = event.modifierFlags.intersection(.deviceIndependentFlagsMask).rawValue
-            match = event.keyCode == shortcut.keyCode && modifiers == shortcut.modifiers
+            let flags = event.modifierFlags.intersection(.deviceIndependentFlagsMask).rawValue
+            match = event.keyCode == shortcut.keyCode && Int(flags) == shortcut.modifiers
         } else {
             let buttonNum: Int
             switch event.type {
@@ -182,8 +188,8 @@ final class ShortcutManager: ObservableObject {
     }
     
     private func recordKeyboardShortcut(from event: NSEvent) {
-        let modifiers = event.modifierFlags.intersection(.deviceIndependentFlagsMask).rawValue
-        currentShortcut = Shortcut(kind: .keyboard, keyCode: event.keyCode, modifiers: modifiers)
+        let flags = event.modifierFlags.intersection(.deviceIndependentFlagsMask).rawValue
+        currentShortcut = Shortcut(kind: .keyboard, keyCode: event.keyCode, modifiers: Int(flags))
         isRecording = false
     }
     
@@ -193,16 +199,27 @@ final class ShortcutManager: ObservableObject {
     }
     
     private func loadShortcut() {
-        if let data = UserDefaults.standard.data(forKey: "kclick_shortcut"),
-           let decoded = try? JSONDecoder().decode(Shortcut.self, from: data) {
-            currentShortcut = decoded
+        isLoading = true
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            if let data = self.defaults.data(forKey: self.shortcutKey),
+               let decoded = try? JSONDecoder().decode(Shortcut.self, from: data) {
+                self.currentShortcut = decoded
+            }
+            self.isLoading = false
         }
     }
     
     private func saveShortcut() {
-        if let encoded = try? JSONEncoder().encode(currentShortcut) {
-            UserDefaults.standard.set(encoded, forKey: "kclick_shortcut")
+        guard !isLoading else { return }
+        if let shortcut = currentShortcut {
+            if let encoded = try? JSONEncoder().encode(shortcut) {
+                defaults.set(encoded, forKey: shortcutKey)
+            }
+        } else {
+            defaults.removeObject(forKey: shortcutKey)
         }
+        defaults.synchronize()
     }
     
     deinit {

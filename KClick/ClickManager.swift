@@ -4,20 +4,65 @@ import CoreGraphics
 import Combine
 
 final class ClickManager: ObservableObject {
-    enum ClickMode: String, Codable, CaseIterable {
-        case toggle = "Toggle"
-        case hold = "Hold"
+    enum ClickMode: Int, Codable, CaseIterable {
+        case toggle = 0
+        case hold = 1
+        
+        var name: String {
+            switch self {
+            case .toggle: return "Toggle"
+            case .hold: return "Hold"
+            }
+        }
     }
     
     @Published var isClicking = false
     @Published var clicksPerSecond: Double = 10.0 {
-        didSet { updateTimer() }
+        didSet { 
+            saveSettings()
+            updateTimer() 
+        }
     }
     @Published var clickMode: ClickMode = .toggle {
-        didSet { stop() } // Stop when mode changes to prevent confusion
+        didSet { 
+            saveSettings()
+            stop() 
+        }
     }
     @Published var isPausedByFn = false
     @Published var isMouseOverApp = false
+    
+    private let defaults = UserDefaults(suiteName: "com.kclick.settings") ?? .standard
+    private let cpsKey = "cps"
+    private let modeKey = "mode"
+    
+    private var isLoading = false
+    
+    init() {
+        loadSettings()
+    }
+    
+    private func loadSettings() {
+        isLoading = true
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            if self.defaults.object(forKey: self.cpsKey) != nil {
+                self.clicksPerSecond = self.defaults.double(forKey: self.cpsKey)
+            }
+            let savedMode = self.defaults.integer(forKey: self.modeKey)
+            if let mode = ClickMode(rawValue: savedMode) {
+                self.clickMode = mode
+            }
+            self.isLoading = false
+        }
+    }
+    
+    private func saveSettings() {
+        guard !isLoading else { return }
+        defaults.set(clicksPerSecond, forKey: cpsKey)
+        defaults.set(clickMode.rawValue, forKey: modeKey)
+        defaults.synchronize()
+    }
     
     private var timer: Timer?
     private let queue = DispatchQueue(label: "com.kclick.clickingQueue", qos: .userInteractive)

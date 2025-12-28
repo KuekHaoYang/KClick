@@ -31,7 +31,7 @@ struct ContentView: View {
             // Click Mode
             Picker("Mode", selection: $clickManager.clickMode) {
                 ForEach(ClickManager.ClickMode.allCases, id: \.self) { mode in
-                    Text(mode.rawValue).tag(mode)
+                    Text(mode.name).tag(mode)
                 }
             }
             .pickerStyle(.segmented)
