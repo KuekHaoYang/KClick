@@ -112,8 +112,17 @@ final class ClickManager: ObservableObject {
     }
     
     private func simulateClick() {
-        // Skip clicking if the mouse is over our own app window
+        // Double check if the mouse is over the app window
         if isMouseOverApp { return }
+        
+        // Robust check: see if current mouse position is within the main window frame
+        if let currentLocation = CGEvent(source: nil)?.location {
+            let screenHeight = NSScreen.main?.frame.height ?? 0
+            let cocoaPoint = NSPoint(x: currentLocation.x, y: screenHeight - currentLocation.y)
+            if NSApp.windows.contains(where: { $0.frame.contains(cocoaPoint) && $0.isVisible }) {
+                return
+            }
+        }
         
         queue.async {
             // Re-check position to ensure we are still clicking at the current cursor

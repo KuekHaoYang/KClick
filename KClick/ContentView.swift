@@ -83,6 +83,18 @@ struct ContentView: View {
                 }
                 .buttonStyle(.plain)
                 
+                if shortcutManager.currentShortcut != nil && !shortcutManager.isRecording {
+                    Button(action: {
+                        shortcutManager.clearShortcut()
+                    }) {
+                        Text("Clear Shortcut")
+                            .font(.caption)
+                            .foregroundColor(.red)
+                    }
+                    .buttonStyle(.plain)
+                    .padding(.top, 4)
+                }
+                
                 Text("Hold Fn to temporarily pause")
                     .font(.caption)
                     .foregroundColor(.secondary)

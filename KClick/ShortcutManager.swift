@@ -100,6 +100,10 @@ final class ShortcutManager: ObservableObject {
             guard let self = self else { return event }
             if self.isRecording {
                 if event.type == .keyDown {
+                    if event.keyCode == 53 { // Escape
+                        self.isRecording = false
+                        return nil
+                    }
                     self.recordKeyboardShortcut(from: event)
                     return nil
                 }
@@ -158,6 +162,7 @@ final class ShortcutManager: ObservableObject {
         let match: Bool
         
         if shortcut.kind == .keyboard {
+            guard event.type == .keyDown || event.type == .keyUp else { return }
             isDown = event.type == .keyDown
             isUp = event.type == .keyUp
             let flags = event.modifierFlags.intersection(.deviceIndependentFlagsMask).rawValue
@@ -196,6 +201,10 @@ final class ShortcutManager: ObservableObject {
     private func recordMouseShortcut(button: Int) {
         currentShortcut = Shortcut(kind: .mouse, keyCode: UInt16(button), modifiers: 0)
         isRecording = false
+    }
+    
+    func clearShortcut() {
+        currentShortcut = nil
     }
     
     private func loadShortcut() {
